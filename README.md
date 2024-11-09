@@ -1,23 +1,26 @@
+Here’s an updated README file for your Pong project, incorporating details about the STM32 microcontroller and its role in detecting hand proximity for paddle control.
+
+---
+
 # Pong Game Project
 
-This repository contains a modified version of the classic arcade game Pong, implemented in Python. This project was developed as part of a prototyping module at school, showcasing the use of capacitive sensing technology to control game elements. Each player controls their paddle using proximity sensors, allowing them to move their paddle up or down based on hand distance from an electrode sensor.
+This repository contains a modified version of the classic Pong game, implemented in Python and utilizing an STM32 microcontroller to detect hand distance from electrodes. This project, developed as part of a school prototyping module, demonstrates a novel control method where players manipulate game elements using hand gestures.
 
 ## Overview
 
-This project is based on a smart controller prototype designed to simulate a game controller using capacitive electrodes. The aim was to create a responsive and interactive gaming experience by using hand movements to control in-game objects.
+The project combines a classic arcade game with capacitive sensing technology, creating a unique interaction where each player controls their paddle through hand movements detected by an STM32 microcontroller and metal electrodes.
 
 ### Features
-- **Capacitive Sensor Control:** Each player's paddle is controlled by moving their hand closer to or farther from a designated electrode.
-- **Two-Player Game:** The game allows two players to compete against each other.
-- **Score Tracking:** Real-time score updates for each player.
-- **Responsive Controls:** Paddle movement dynamically adjusts based on hand distance from the sensor, creating an immersive gaming experience.
+- **Capacitive Sensing Control:** The game reads hand proximity data from electrodes, allowing each player to control their paddle based on their hand’s distance.
+- **STM32 Microcontroller Integration:** The STM32 controller measures the hand's proximity and transmits data via UART to the game.
+- **Two-Player Mode:** Supports two players with independent hand sensors for competitive gameplay.
+- **Real-Time Score Tracking:** Displays updated scores and messages for player interactions.
 
 ## Setup and Installation
 
 ### Requirements
-- Python 3.x
-- Pygame library
-- Serial communication library for Python
+- **Python 3.x**
+- **Libraries:** Pygame and PySerial
 
 Install dependencies with:
 ```bash
@@ -25,43 +28,47 @@ pip install pygame pyserial
 ```
 
 ### Running the Game
-To start the game, run:
+Execute the following command to start the game:
 ```bash
 python pong.py
 ```
 
 ## Game Controls
-Each player can control their paddle with proximity sensors:
+Each player controls their paddle by adjusting their hand distance:
 - **Left Paddle (Red Player):** Moves up or down based on hand distance from the first sensor.
 - **Right Paddle (Blue Player):** Moves up or down based on hand distance from the second sensor.
 
-In-game instructions:
-- **Press `Space`** to start.
+In-game:
+- **Press `Space`** to start the game.
 - **Press `R`** to restart after a game ends.
 - **Press `Esc`** to quit the game.
 
-## Project Structure
+## System Components
 
-- **pong.py**: Contains the main code to run the game.
-- **images/**: Directory with screenshots and diagrams of the system setup (add relevant images here).
-
-## System Architecture
-
-1. **Sensor Module:** Utilizes capacitive electrodes to detect hand movement.
-2. **Communication Protocol:** The STM32 microcontroller captures sensor data and sends it to the game via serial communication.
-3. **Game Logic:** The Python game engine reads sensor values to adjust paddle positions in real-time, using Pygame for visual display.
+1. **STM32 Microcontroller:** Configured to measure distance from the metal plates (acting as capacitive electrodes). The main controller code, `main.c`, handles input capture, timer configuration, and UART communication.
+2. **Proximity Detection:** The STM32 captures timer data reflecting the distance from each player’s hand to the electrode and sends this data to the game via UART for real-time paddle adjustments.
+3. **Python Game Engine:** The game logic and display are handled by Pygame, which reads sensor data to adjust paddle positions dynamically.
 
 ## How It Works
 
-The game interacts with sensor data collected via serial communication:
-- The hand distance is detected by the electrode sensors and converted into paddle movement.
-- Paddle positions update in real-time as hand positions change, allowing each player to control their paddle with proximity gestures.
+The STM32 microcontroller reads capacitive sensor data:
+- The controller’s timers measure variations in capacitance due to hand proximity to the metal plates.
+- These values are processed and transmitted over UART to the game, where paddle positions adjust based on the data.
+
+### STM32 Firmware Files
+- **main.c:** Primary code managing timers, UART communication, and data transmission.
+- **stm32f3xx_it.c:** Interrupt handling for UART communication.
+- **stm32f3xx_hal_msp.c:** Initializes peripherals like DMA and GPIO for handling sensor and communication tasks.
 
 ## Images
-Include relevant images here, such as:
-- **System Diagram**: A general overview of the capacitive sensing setup.
-- **Game Interface**: Screenshots of the game in action.
-- **Sensor Integration**: Photos or diagrams showing the sensors and electrode placement.
+Include images showing the following:
+- **System Diagram**: Diagram of the capacitive sensing setup.
+- **Game Interface**: Screenshots of the game.
+- **Hardware Setup**: Photos or diagrams showing the STM32 setup with metal plates.
 
 ## License
 This project is open-source and available under the MIT License.
+
+---
+
+Place the images in an `images` folder within your repository and update the paths in the README as needed. This will give potential users and collaborators a comprehensive view of how the system is set up and functions.
