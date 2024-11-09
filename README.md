@@ -64,8 +64,12 @@ The STM32 microcontroller reads capacitive sensor data:
 - **stm32f3xx_hal_msp.c:** Initializes peripherals like DMA and GPIO for handling sensor and communication tasks.
 
 ## Images
+
 ![System Diagram](images/game.png)
 - **Game Interface**: Screenshots of the game.
+
+
+
 ![System Diagram](images/setup.jpg)
 - **Hardware Setup**: The STM32 setup with metal plates.
 
