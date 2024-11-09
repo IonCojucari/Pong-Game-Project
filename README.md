@@ -1,6 +1,6 @@
 # Pong Game Project
 
-This repository contains a modified version of the classic Pong game, implemented in Python and utilizing an STM32 microcontroller to detect hand distance from electrodes. This project, developed as part of a school prototyping module, demonstrates a novel control method where players manipulate game elements using hand gestures.
+This repository contains a modified version of the classic Pong game, utilizing an STM32 microcontroller to detect hand distance from electrodes. This project, developed as part of a school prototyping module, demonstrates a novel control method where players manipulate game elements using hand gestures.
 
 ## Overview
 
