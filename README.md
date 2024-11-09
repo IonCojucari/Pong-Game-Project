@@ -23,11 +23,18 @@ Install dependencies with:
 pip install pygame pyserial
 ```
 
-### Running the Game
-Execute the following command to start the game:
-```bash
-python pong.py
-```
+## Running the Game
+
+1. **STM32 Microcontroller Setup**:
+   - Open the `.mxproject` file using STM32CubeIDE.
+   - Build and upload the firmware code to the STM32 microcontroller.
+   - Ensure the microcontroller is connected to your computer, and it is set up to communicate via UART for data transmission to the game.
+
+2. **Start the Game**:
+   - After the STM32 microcontroller is connected and running, execute the following command to start the game interface:
+     ```bash
+     python pong.py
+     ```
 
 ## Game Controls
 Each player controls their paddle by adjusting their hand distance:
