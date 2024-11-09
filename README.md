@@ -1,7 +1,3 @@
-Here’s an updated README file for your Pong project, incorporating details about the STM32 microcontroller and its role in detecting hand proximity for paddle control.
-
----
-
 # Pong Game Project
 
 This repository contains a modified version of the classic Pong game, implemented in Python and utilizing an STM32 microcontroller to detect hand distance from electrodes. This project, developed as part of a school prototyping module, demonstrates a novel control method where players manipulate game elements using hand gestures.
@@ -68,7 +64,3 @@ Include images showing the following:
 
 ## License
 This project is open-source and available under the MIT License.
-
----
-
-Place the images in an `images` folder within your repository and update the paths in the README as needed. This will give potential users and collaborators a comprehensive view of how the system is set up and functions.
