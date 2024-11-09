@@ -66,7 +66,7 @@ The STM32 microcontroller reads capacitive sensor data:
 ## Images
 ![System Diagram](images/game.png)
 - **Game Interface**: Screenshots of the game.
-![System Diagram](images/setup.png)
+![System Diagram](images/setup.jpg)
 - **Hardware Setup**: The STM32 setup with metal plates.
 
 ## License
